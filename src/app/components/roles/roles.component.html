@@ -1,0 +1,39 @@
+<!-- <p>roles works!</p>
+<div class="row">
+    <div class="col-3">
+        <p>This is {{angularVersion}} of {{firstName}}</p>
+    </div>
+    <div class="col-3">
+        <p>currently the time is {{currentDate | date:'medium'}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{selectedState}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        input: <input type="text" [(ngModel)]="firstName" placeholder="Enter your name" />
+    </div>
+    <div class="col-3">
+        <input [type]="inputType">
+    </div>
+    <div class="col-3">
+        <select name="" id="" [(ngModel)]="selectedState">
+            <option value="MH">MH</option>
+            <option value="KA">KA</option>
+            <option value="AP">AP</option>
+        </select>
+    </div>
+</div> -->
+
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let item of rolesList">
+                {{item.role}}
+            </li>
+        </ul>
+    </div>
+</div>
