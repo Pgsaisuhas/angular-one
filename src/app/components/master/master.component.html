@@ -2,27 +2,36 @@
 <div class="row">
     <div class="col-12 text-center">
         <div class="btn-group">
-            <button type="button" (click)="changeTab('roles')" class="btn" [ngClass]="currentComponent == 'roles' ? 'btn-primary' : 'btn-secondary'">
-                Roles
-            </button>
             <button type="button" (click)="changeTab('designation')" class="btn" [ngClass]="currentComponent == 'designation' ? 'btn-primary' : 'btn-secondary'">
                 Designation
+            </button>
+            <button type="button" (click)="changeTab('roles')" class="btn" [ngClass]="currentComponent == 'roles' ? 'btn-primary' : 'btn-secondary'">
+                Roles
             </button>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-12">
-        <ng-container *ngIf="currentComponent == 'roles'">
-            <app-roles></app-roles>
-        </ng-container>
-    </div>
-    <div class="col-12">
+    
+    <!-- <div class="col-12">
         <ng-container *ngIf="currentComponent == 'designation'">
             <app-designation></app-designation>
         </ng-container>
     </div>
+    <div class="col-12">
+        <ng-container *ngIf="currentComponent == 'roles'">
+            <app-roles></app-roles>
+        </ng-container>
+    </div> -->
+
+    <ng-container>
+        @if(currentComponent === 'designation') {
+            <app-designation></app-designation>
+        } @else if(currentComponent === 'roles') {
+            <app-roles></app-roles>
+        }
+    </ng-container>
 </div>
 
 

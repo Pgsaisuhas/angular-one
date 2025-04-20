@@ -12,13 +12,18 @@ import { error } from 'console';
 })
 export class DesignationComponent implements OnInit {
 
+  isLoader: boolean = true;
+
+
   designationList: IDesignation[] = [];
   ngOnInit(): void {
     this.masterService.getDesignation().subscribe((res: APIResponseModel) => {
       this.designationList = res.data;
+      this.isLoader = false;
       console.log(this.designationList);
     }, error => {
       console.error('Error fetching designation data:', error);
+      this.isLoader = false;
     });
   }
   masterService = inject(MasterService);
